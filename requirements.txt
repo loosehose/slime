@@ -1,0 +1,5 @@
+Flask==2.1.0
+flask-cors==3.0.10
+openai==0.27.0
+python-dotenv==0.19.2
+SQLite3==3.35.0
