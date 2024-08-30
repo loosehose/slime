@@ -1,4 +1,4 @@
-![Slime](./assets/slime.png)
+![Slime](./images/slime.png)
 
 # Slime
 
