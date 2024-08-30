@@ -21,7 +21,7 @@
 ## Overview
 Slime is a web-based application designed to streamline the process of creating and managing red team assessment reports. It provides a user-friendly interface for security professionals to generate, edit, and organize findings from red team engagements.
 
-## ✨ Features
+## Features
 - **Project Management**: Create, view, edit, and delete security assessment projects.
 - **Finding Generation**: Automatically generate detailed findings based on user input.
 - **Report Summaries**: Generate executive summaries, assessment overviews, and detailed assessment summaries.
