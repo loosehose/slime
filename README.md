@@ -67,7 +67,7 @@ Before you begin, ensure you have met the following requirements:
 
 4. Configure the OpenAI API key:
 
-   - Create a `.env` file in the `backend` directory
+   - Create a `.env` file in the root directory
    - Add your OpenAI API key: `OPENAI_API_KEY=your_api_key_here`
 
 ## Running the Application
