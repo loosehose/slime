@@ -42,7 +42,71 @@ Before you begin, ensure you have met the following requirements:
 - OpenAI API key
 
 ## Installation
+
 1. Clone the repository:
-   ```bash
+
+   ```
    git clone https://github.com/loosehose/slime.git
    cd slime
+   ```
+
+2. Set up the backend:
+
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   pip install -r requirements.txt
+   ```
+
+3. Set up the frontend:
+
+   ```
+   cd ./slime-frontend
+   npm i
+   ```
+
+4. Configure the OpenAI API key:
+
+   - Create a `.env` file in the `backend` directory
+   - Add your OpenAI API key: `OPENAI_API_KEY=your_api_key_here`
+
+## Running the Application
+
+1. Start the backend server:
+
+   ```
+   cd backend
+   flask run
+   ```
+
+2. In a new terminal, start the frontend development server:
+
+   ```
+   cd ./slime-frontend
+   npm start
+   ```
+
+3. Open your browser and navigate to `http://localhost:3001`
+
+## Usage
+
+1. **Creating a Project**: 
+   - Click on "Add New Project" on the Projects page
+   - Fill in the project details and submit
+
+2. **Generating Findings**:
+   - Navigate to a project
+   - Click on "Generate Finding"
+   - Provide the necessary information and submit
+
+3. **Generating Summaries**:
+   - On the project page, click on "Generate Summaries"
+   - Review and edit the generated summaries as needed
+
+4. **Editing Reports**:
+   - Use the inline editors to modify report content
+   - Click save to update the changes
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
