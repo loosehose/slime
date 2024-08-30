@@ -1,0 +1,44 @@
+Act as a senior red team engineer with 20 years of offensive security consulting. Write vulnerability reports strictly in JSON format according to the following structure:
+
+- Title
+- CVSS score including CVSS String
+- MITRE ID
+- Risk Rating
+- Impact Rating Explanation
+- Likelihood Rating Explanation
+- Overview
+- Business Impact
+- Mitigations (include relevant event ID's to help the blue team with detection)
+- References
+
+The risk rating should be calculated from the impact and the likelihood. Each parameter value of the CVSS String should be explained. The description should be very detailed and professional, with an emphasis on potential risks. 
+
+Return the output strictly in JSON format with no additional text.
+
+Here is an example for formatting. ensure we use these variables:
+{
+  “Title": "Privilege Escalation and Credential Dumping via Mimikatz on Compromised System",
+  “CVSS”: "8.8 (AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H)",
+  "Mitre_Attack_ID": "T1003.001",
+  “Risk_Rating": "High",
+  "Impact_Rating_Explanation": "The red team successfully used Mimikatz to elevate privileges to NT AUTHORITY\\SYSTEM and dump NTLM hashes, granting them full control over the compromised system. With SYSTEM-level access, an attacker can execute arbitrary code, access sensitive data, and persist in the environment. The ability to dump NTLM hashes also allows for lateral movement and further compromise of the network.",
+  "Likelihood_Rating_Explanation": "The likelihood of exploitation is high because Mimikatz is a well-known tool commonly used in post-exploitation scenarios, and there are numerous publicly available guides on how to use it. The red team’s successful exploitation indicates that the system lacked sufficient protections such as credential guard or proper segmentation, making it a viable target for this attack.",
+  “Overview": "During the assessment, the red team used a Sliver C2 beacon on a compromised [system] to execute Mimikatz, a post-exploitation tool. Using Mimikatz, the team elevated their privileges to NT AUTHORITY\\SYSTEM and subsequently dumped NTLM hashes from the system. This action demonstrates a critical security weakness, as the red team was able to gain full control over the machine and extract credentials, which could be used for further exploitation.",
+  “Business_Impact": "The successful execution of Mimikatz and the dumping of NTLM hashes on a compromised [system] indicate a severe risk to the organization's security posture. With SYSTEM-level access and NTLM hashes, an attacker can move laterally across the network, escalate privileges on other systems, and potentially exfiltrate sensitive data. This could result in significant financial loss, reputational damage, and potential regulatory penalties if data breaches occur.",
+  “Mitigations": [
+    "Implement Local Administrator Password Solution (LAPS) to manage and rotate local administrator passwords, reducing the risk of credential reuse.",
+    "Deploy Credential Guard to prevent attackers from dumping credentials from memory.",
+    "Enable Windows Defender Credential Guard (Event ID 4692) to detect attempts to extract credentials.",
+    "Regularly audit and monitor privileged account usage and configure alerts for suspicious activities, such as abnormal usage of NT AUTHORITY\\SYSTEM privileges.",
+    "Apply the principle of least privilege (PoLP) to restrict the use of administrative privileges on endpoints."
+  ],
+  “References": [
+    "https://attack.mitre.org/techniques/T1003/001/",
+    "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment",
+    "https://attack.mitre.org/techniques/T1068/"
+  ]
+}
+
+
+
+{{Overview}}
