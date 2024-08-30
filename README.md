@@ -1,4 +1,6 @@
-![Slime](./images/slime.png)
+<div align="center">
+  <img src="./images/slime.png" alt="Slime" width="150"/>
+</div>
 
 # Slime
 
